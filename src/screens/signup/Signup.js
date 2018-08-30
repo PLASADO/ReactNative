@@ -16,6 +16,10 @@ export default class Signup extends Component {
         this.props.navigation.navigate("Login")
     }
 
+    onActionFacebook = () => {
+        this.props.navigation.navigate("PINVerification")   
+    }
+
     render() {
 
         return (
@@ -24,17 +28,19 @@ export default class Signup extends Component {
                     <Image source={ require('../../resources/logo.png') } style={{resizeMode: 'stretch', width: 145, height: 100}}/>
                 </View>
 
-                <View style={[{flexDirection: 'row', height: 50, marginTop: 70, marginLeft: 20, marginRight: 20}, (Platform.OS === 'android') ? {marginTop: 60} : null]}>
-                    <View style={styles.social}>
-                        <Image source={ require('../../resources/facebook.png') } style={{resizeMode: 'stretch', width: 25, height: 25}}/>
-                        <Text style={{color: '#7a7a7a', fontSize: 12, marginLeft: 15}}>FACEBOOK</Text>
+                <TouchableOpacity onPress={() => this.onActionFacebook()}>
+                    <View style={[{flexDirection: 'row', height: 50, marginTop: 70, marginLeft: 20, marginRight: 20}, (Platform.OS === 'android') ? {marginTop: 60} : null]}>
+                        <View style={styles.social}> 
+                            <Image source={ require('../../resources/facebook.png') } style={{resizeMode: 'stretch', width: 25, height: 25}}/>
+                            <Text style={{color: '#7a7a7a', fontSize: 12, marginLeft: 15}}>FACEBOOK</Text> 
+                        </View>
+                        <View style={{width: 20}} />
+                        <View style={styles.social}>
+                            <Image source={ require('../../resources/google.png') } style={{resizeMode: 'stretch', width: 25, height: 25}}/>
+                            <Text style={{color: '#7a7a7a', fontSize: 12, marginLeft: 15}}>GOOGLE</Text>
+                        </View>
                     </View>
-                    <View style={{width: 20}} />
-                    <View style={styles.social}>
-                        <Image source={ require('../../resources/google.png') } style={{resizeMode: 'stretch', width: 25, height: 25}}/>
-                        <Text style={{color: '#7a7a7a', fontSize: 12, marginLeft: 15}}>GOOGLE</Text>
-                    </View>
-                </View>
+                </TouchableOpacity>
 
                 <Text style={{color: '#616161', fontSize: 14, textAlign: 'center', marginTop: 25, marginBottom: 25}}>or sign up with email</Text>
 

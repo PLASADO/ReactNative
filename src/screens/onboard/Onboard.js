@@ -81,7 +81,7 @@ export default class QallupOnboarding extends Component {
                 <TouchableOpacity onPress={() => this.onActionLogin()}>
                     <Text style={{fontSize: 12, alignItems: 'center', marginTop: 25}}>
                         <Text style={{color: '#7f7f7f'}}>Already have an account? </Text>
-                            <Text style={{color: '#ed2a2d'}}>Login</Text>
+                        <Text style={{color: '#ed2a2d'}}>Login</Text>
                     </Text>
                 </TouchableOpacity>
 

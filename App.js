@@ -12,14 +12,23 @@ import Onboard from "./src/screens/onboard/Onboard";
 import Login from "./src/screens/login/Login";
 
 import Signup from "./src/screens/signup/Signup";
-
+import PINVerification from "./src/screens/signup/PINVerification";
+import Confirm from "./src/screens/signup/Confirm";
+import Where from "./src/screens/signup/Where";
+import LetPlan from "./src/screens/signup/LetPlan";
 
 
 const Navigation = createStackNavigator({
 
+    Onboard: { screen: Onboard },
+    
     Login: { screen: Login },
+    
     Signup: { screen: Signup },
-    Onboard: { screen: Onboard }
+    PINVerification: { screen: PINVerification },
+    Confirm: { screen: Confirm },
+    Where: { screen: Where },
+    LetPlan: { screen: LetPlan }
     
 }, {
     initialRouteName: 'Onboard',

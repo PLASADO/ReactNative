@@ -33,7 +33,7 @@ export default class Login extends Component {
                         placeholderTextColor = "#7a7a7a"
                         autoCapitalize = "none" />
                 </View>
-                <View style={[{backgroundColor: '#7a7a7a', height: .5}, styles.viewSpace]}/>
+                <View style={[styles.line, styles.viewSpace]}/>
 
                 <View style={[styles.user_infor, {marginTop: 8}]}>
                     <TextInput style={[styles.text_input, styles.viewSpace]}
@@ -42,7 +42,7 @@ export default class Login extends Component {
                         placeholderTextColor = "#7a7a7a"
                         autoCapitalize = "none" />
                 </View>
-                <View style={[{backgroundColor: '#7a7a7a', height: .5}, styles.viewSpace]}/>
+                <View style={[styles.line, styles.viewSpace]}/>
 
                 <View style={[{alignItems: 'center', justifyContent: 'center', marginTop: 75 }, (Platform.OS === 'android') ? {marginTop: 50} : null]}>
                     <Button title={"Login"} />
@@ -78,5 +78,9 @@ const styles = StyleSheet.create({
     viewSpace: {
         marginLeft: 30,
         marginRight: 30
+    },
+    line: {
+        backgroundColor: '#7a7a7a', 
+        height: .5
     }
 });
