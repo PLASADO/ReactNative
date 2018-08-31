@@ -14,7 +14,7 @@ export default class PINVerification extends Component {
     }
 
     onHandleBtnConfirm() {
-        this.props.navigation.navigate("Confirm");
+        this.props.navigation.navigate("Where");
     }
 
     onChangeText(value) {

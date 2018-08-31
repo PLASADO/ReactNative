@@ -17,6 +17,8 @@ import Confirm from "./src/screens/signup/Confirm";
 import Where from "./src/screens/signup/Where";
 import LetPlan from "./src/screens/signup/LetPlan";
 
+import MainTabBased from "./src/screens/main/MainTabBased";
+
 
 const Navigation = createStackNavigator({
 
@@ -28,7 +30,8 @@ const Navigation = createStackNavigator({
     PINVerification: { screen: PINVerification },
     Confirm: { screen: Confirm },
     Where: { screen: Where },
-    LetPlan: { screen: LetPlan }
+    LetPlan: { screen: LetPlan },
+    MainTabBased: { screen: MainTabBased }
     
 }, {
     initialRouteName: 'Onboard',

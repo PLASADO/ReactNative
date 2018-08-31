@@ -15,7 +15,7 @@ export default class Confirm extends Component {
     }
 
     onActionConfirm = () => {
-        this.props.navigation.navigate("Where")   
+        this.props.navigation.navigate("PINVerification")   
     }
 
     render() {

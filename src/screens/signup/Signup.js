@@ -17,7 +17,7 @@ export default class Signup extends Component {
     }
 
     onActionFacebook = () => {
-        this.props.navigation.navigate("PINVerification")   
+        this.props.navigation.navigate("Confirm")   
     }
 
     render() {
