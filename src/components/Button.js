@@ -36,15 +36,9 @@ export default class Button extends Component {
     render() {
         let { title, hidden } = this.state;
         return (<View style={[styles.container, this.state.customContainer ? this.state.customContainer : null]}>
-            {
-                !this.state.hidden
-                    ?
-                    <TouchableOpacity style={[styles.button, this.state.customStyleBtn ? this.state.customStyleBtn : null]} onPress={this.onPress.bind(this)}>
-                        <Text style={[styles.title, this.state.customStyleText ? this.state.customStyleText : null]}>{title}</Text>
-                    </TouchableOpacity>
-                    :
-                    null
-            }
+                <TouchableOpacity style={[styles.button, this.state.customStyleBtn ? this.state.customStyleBtn : null, this.state.hidden ? {backgroundColor: '#9d9d9d'} : null]} onPress={this.onPress.bind(this)}>
+                    <Text style={[styles.title, this.state.customStyleText ? this.state.customStyleText : null]}>{title}</Text>
+                </TouchableOpacity>
         </View>);
     }
 }

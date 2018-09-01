@@ -7,10 +7,12 @@ import {
 } from 'react-native';
 import {createStackNavigator} from 'react-navigation'
 import Offers from "./Offers";
+import OfferVoucher from "../OfferVoucher";
 
 const Navigation = createStackNavigator({
     
     Offers: {screen: Offers},
+    OfferVoucher: {screen: OfferVoucher},
 
 }, {
     initialRouteName: 'Offers',

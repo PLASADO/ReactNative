@@ -20,8 +20,8 @@ export default class CurrentPlanItem extends Component {
                     <View style={{flexDirection: 'row'}}>
                         <View style={{flexDirection: 'column', marginTop: 13, marginLeft: 15}}>
                            <Text style={{fontSize: 13}}>{this.props.sub}</Text>
-                           <Text style={{color: '#8e8e8e', fontSize: 12, marginTop: 5}}>{this.props.date}</Text>
-                           <Text style={{color: '#8e8e8e', fontSize: 12, marginTop: 2}}>{this.props.merchantCnt} Merchants</Text> 
+                           <Text style={[styles.textStyle, {marginTop: 5}]}>{this.props.date}</Text>
+                           <Text style={[styles.textStyle, {marginTop: 2}]}>{this.props.merchantCnt} Merchants</Text> 
                         </View>
                         <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 15, marginLeft: 25}}>
                             <Image source={require('../resources/man.png')} style={{ width: 40, height: 40}} />
@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     textStyle: {
-        color: 'white', 
-        marginLeft: 10
+        color: '#8e8e8e', 
+        fontSize: 12
     },
     elevationLow1: {
       ...Platform.select({

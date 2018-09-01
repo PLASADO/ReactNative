@@ -43,7 +43,7 @@ export default class LetPlan extends Component {
     }
 
     onActionContinue = () => {
-         
+         this.props.navigation.navigate("MainTabBased");
     }
 
     renderItem(item, index) {

@@ -8,6 +8,8 @@ import {
     Platform
 } from "react-native";
 
+import styles from "../screens/main/styles/styles";
+
 export default class OffersItem extends Component {
     render() {
         return (
@@ -25,27 +27,3 @@ export default class OffersItem extends Component {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    textStyle: {
-        color: 'white', 
-        marginLeft: 10
-    },
-    elevationLow1: {
-      ...Platform.select({
-        ios: {
-          shadowColor: 'lightgrey',
-          shadowOffset: { width: 1, height: 3 },
-          shadowOpacity: 5,
-        },
-        android: {
-          elevation: 5,
-        },
-      }),
-    },
-});

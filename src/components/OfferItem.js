@@ -9,6 +9,8 @@ import {
     Dimensions
 } from "react-native";
 
+import styles from "../screens/main/styles/styles";
+
 var deviceWidth = Dimensions.get('window').width;
 
 export default class OfferItem extends Component {
@@ -19,7 +21,7 @@ export default class OfferItem extends Component {
                     <View style={{position: 'absolute', top: 105, left: 0, height: 55, width: deviceWidth - 40, backgroundColor: '#ec2727bd', borderBottomLeftRadius: 7, borderBottomRightRadius: 7, justifyContent: 'center'}}>
                         <Text style={[{fontSize: 16}, styles.textStyle]}>{this.props.title}</Text>
                         <Text style={[{fontSize: 12, marginTop: 3}, styles.textStyle]}>{this.props.sub}</Text>
-                        <View style={{position: 'absolute', right: 25, width: 100, height: 34, borderRadius: 7, borderColor: 'white', borderWidth: 1.5, alignItems: 'center', justifyContent: 'center'}}>
+                        <View style={[{position: 'absolute', right: 25, width: 100, height: 34, alignItems: 'center', justifyContent: 'center'}, (!this.props.border) ? null : {borderRadius: 7, borderColor: 'white', borderWidth: 1.5}]}>
                             <Text style={{color: 'white', fontSize: 16}}>{ this.props.btnText }</Text>
                         </View>
                     </View>
@@ -32,14 +34,3 @@ export default class OfferItem extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    textStyle: {
-        color: 'white', 
-        marginLeft: 10
-    },
-});

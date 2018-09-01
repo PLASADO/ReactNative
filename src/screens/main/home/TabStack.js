@@ -6,11 +6,18 @@ import {
     View
 } from 'react-native';
 import {createStackNavigator} from 'react-navigation'
+
 import Home from "./Home";
+import OfferDetails from "./OfferDetails";
+import PurchaseReview from "./PurchaseReview";
+import OfferVoucher from "../OfferVoucher";
 
 const Navigation = createStackNavigator({
     
     Home: {screen: Home},
+    OfferDetails: { screen: OfferDetails },
+    PurchaseReview: { screen: PurchaseReview },
+    OfferVoucher: { screen: OfferVoucher },
 
 }, {
     initialRouteName: 'Home',

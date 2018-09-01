@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
-import {View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, ImageBackground} from 'react-native';
+import {View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, ImageBackground, Alert, Dimensions} from 'react-native';
 
+import styles from "../styles/styles";
 import {HeaderNavigation} from "../../../components/HeaderNavigation";
 import OffersItem from '../../../components/OffersItem'
 import Category from '../../../components/Category'
+
+const deviceWidth = Dimensions.get('window').width
 
 let dataOffer = [
     {
@@ -12,6 +15,20 @@ let dataOffer = [
         price: 300,
         bgImg: require('../../../resources/example1.png'),
         imgUri: require('../../../resources/wedding_dress.png')
+    },
+    {
+        title: "Flowers",
+        sub: "by Alice in Bohemia",
+        price: 200,
+        bgImg: require('../../../resources/example2.png'),
+        imgUri: require('../../../resources/flowers.png')
+    },
+    {
+        title: "Jewels",
+        sub: "by Galia Lahav",
+        price: 150,
+        bgImg: require('../../../resources/example3.png'),
+        imgUri: require('../../../resources/jewels.png')
     },
     {
         title: "Flowers",
@@ -39,6 +56,14 @@ let dataCategory = [
         imgUri: require('../../../resources/honeymoon.png')        
     },
     {
+        title: "Wedding",
+        imgUri: require('../../../resources/wedding.png')
+    },
+    {
+        title: "Honeymoon",
+        imgUri: require('../../../resources/honeymoon.png')        
+    },
+    {
         title: "New Plan",
         imgUri: require('../../../resources/new_plan.png')
     }
@@ -52,15 +77,21 @@ export default class Home extends Component {
         super(props);
     }
 
+    onActionOfferDetails = () => {
+        this.props.navigation.navigate("OfferDetails")
+    }
+
     renderItem(item, index) {
         return (
-            <OffersItem bgImg={item.bgImg} imageUri={item.imgUri} title={item.title} sub={item.sub} price={item.price} selection={index} />
+            <TouchableOpacity onPress={() => this.onActionOfferDetails()}>
+                <OffersItem bgImg={item.bgImg} imageUri={item.imgUri} title={item.title} sub={item.sub} price={item.price} selection={index} />
+            </TouchableOpacity>
         );
     }
 
     renderPlanItem(item, index) {
         return (
-            (index != 2) ?  
+            (index != 4) ?  
                 <Category imageUri={item.imgUri} title={item.title} /> :
 
                 <View style={[{height: 80, width: 120, marginLeft: 20, borderStyle: 'dotted', borderColor: '#bebebe', borderWidth: 2.5, borderRadius: 7, backgroundColor: 'white' }]}>
@@ -91,10 +122,15 @@ export default class Home extends Component {
 
         return (
             <View style={styles.container}>
-                <HeaderNavigation title={"Home"} />
+                <HeaderNavigation />
+
+                <View style={styles.header}>
+                    <Text style={[styles.titleText, {position: 'absolute', left: 0, width: deviceWidth, fontSize: 16}]}>Home</Text>
+                    <Image source={require('../../../resources/setting.png')} style={{position: 'absolute', right: 20, width: 20, height: 20}}/>
+                </View>
 
                 <ScrollView showsVerticalScrollIndicator={false}>
-                
+
                     <Text style={{color : 'black', fontSize: 12, marginLeft: 15}}>Offers for you</Text>
                     <View style={{ height: 200, marginTop: 15, marginRight: 20 }}>
                         <ScrollView
@@ -126,12 +162,4 @@ export default class Home extends Component {
             </View>
         )
     }
-
-
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1, 
-        backgroundColor: '#fafafa'
-    }
-});

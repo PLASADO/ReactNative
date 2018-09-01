@@ -4,6 +4,7 @@ import {View, Text, StyleSheet, TouchableOpacity, Dimensions, Platform, Image, S
 import { Header } from 'react-navigation';
 import Svg, {Circle} from 'react-native-svg';
 
+import styles from "../styles/styles";
 import CurrentPlanItem from '../../../components/CurrentPlanItem'
 import Button from '../../../components/Button';
 
@@ -46,7 +47,7 @@ export default class Plan extends Component {
         });
 
         return (
-            <View style={{flex: 1}}>
+            <View style={[styles.container, {backgroundColor: '#fafafa'}]}>
                 <Svg height="120" width={deviceWidth}>
                     <Circle
                         cx={(deviceWidth) / 2}
@@ -76,7 +77,7 @@ export default class Plan extends Component {
 
                 <Text style={{color : 'black', fontSize: 12, marginLeft: 15, marginTop: 20}}>Current Plans</Text>
 
-                <View style={{ height: 300, marginTop: 15, marginRight: 20 }}>
+                <View style={{ height: 305, marginTop: 15, marginRight: 20}}>
                     <ScrollView
                         horizontal={true}
                         showsHorizontalScrollIndicator={false} >
@@ -95,19 +96,3 @@ export default class Plan extends Component {
         )
     }
 }
-
-const styles = StyleSheet.create({
-    header: {
-        position: 'absolute', 
-        left: 0, 
-        top: 25, 
-        height: 35, 
-        width: deviceWidth, 
-        flexDirection: 'row',
-        alignItems: 'center', 
-        
-    },
-    titleText: {
-        textAlign: 'center'
-    },
-});

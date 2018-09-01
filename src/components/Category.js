@@ -7,6 +7,8 @@ import {
     Platform
 } from "react-native";
 
+import styles from "../screens/main/styles/styles";
+
 export default class Category extends Component {
     render() {
         return (
@@ -26,22 +28,3 @@ export default class Category extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    elevationLow1: {
-      ...Platform.select({
-        ios: {
-          shadowColor: 'lightgrey',
-          shadowOffset: { width: 1, height: 3 },
-          shadowOpacity: 5,
-        },
-        android: {
-          elevation: 5,
-        },
-      }),
-    },
-});

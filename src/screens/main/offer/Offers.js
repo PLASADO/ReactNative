@@ -13,7 +13,17 @@ const purchasedList = [
         bgImg: require('../../../resources/purchase1.png'),
         categoryImg: require('../../../resources/helicopter.png'),
         statusImg: require('../../../resources/star.png'),
-    }    
+    },
+    {
+        index: 2,
+        title: "Wedding Rings",   
+        sub: "by Abuhi Jewels",
+        btnText: "Redeem",
+        bgImg: require('../../../resources/wishlist2.png'),
+        categoryImg: require('../../../resources/jewels.png'),
+        statusImg: require('../../../resources/star.png'),
+    } 
+
 ]
 
 const wishList = [
@@ -34,6 +44,15 @@ const wishList = [
         bgImg: require('../../../resources/wishlist2.png'),
         categoryImg: require('../../../resources/jewels.png'),
         statusImg: require('../../../resources/follow.png'),
+    },
+    {
+        index: 3,
+        title: "Helicopter Ride",   
+        sub: "by United Flights",
+        btnText: "Buy now",
+        bgImg: require('../../../resources/purchase1.png'),
+        categoryImg: require('../../../resources/helicopter.png'),
+        statusImg: require('../../../resources/follow.png'),
     }
 ]
 export default class Offers extends Component {
@@ -49,7 +68,7 @@ export default class Offers extends Component {
     }
 
     pushScreen = (item) => {
-
+        this.props.navigation.navigate("OfferVoucher")
     }
 
     render() {
@@ -70,7 +89,7 @@ export default class Offers extends Component {
                             keyExtractor={(item, index) => item.index}
                             renderItem={({item}) => <TouchableOpacity
                                 onPress={() => this.pushScreen(item)}>
-                                <OfferItem title={item.title} sub={item.sub} btnText={item.btnText} bgImg={item.bgImg} categoryImg={item.categoryImg} statusImg={item.statusImg} />
+                                <OfferItem title={item.title} sub={item.sub} btnText={item.btnText} bgImg={item.bgImg} categoryImg={item.categoryImg} statusImg={item.statusImg} border={true} />
                             </TouchableOpacity>}
                         />
                     </View>
@@ -84,7 +103,7 @@ export default class Offers extends Component {
                             keyExtractor={(item, index) => item.index}
                             renderItem={({item}) => <TouchableOpacity
                                 onPress={() => this.pushScreen(item)}>
-                                <OfferItem title={item.title} sub={item.sub} btnText={item.btnText} bgImg={item.bgImg} categoryImg={item.categoryImg} statusImg={item.statusImg} />
+                                <OfferItem title={item.title} sub={item.sub} btnText={item.btnText} bgImg={item.bgImg} categoryImg={item.categoryImg} statusImg={item.statusImg} border={true} />
                             </TouchableOpacity>}
                         />
                     </View>
