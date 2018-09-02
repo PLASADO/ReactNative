@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 
+import styles from "../main/styles/styles";
 import {HeaderNavigation} from "../../components/HeaderNavigation";
 import {Input} from "../../components/Input";
 import Button from "../../components/Button";
@@ -98,32 +99,4 @@ export default class LetPlan extends Component {
             </View>
         )
     }
-
-
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fafafa'
-    },
-    containerFooter: {
-        position: 'absolute',
-        bottom: 35,
-        left: 25,
-        alignItems: 'center',
-        backgroundColor: '#fafafa',
-        justifyContent: 'center'
-    },
-    activeCom: {
-        backgroundColor: 'white',
-    },
-    inactiveCom: {
-        backgroundColor: 'white',
-    },
-    activeText: {
-        color: '#ed2a2d',
-    },
-    inactiveText: {
-        color: '#ed2a2d',
-    },
-});

@@ -7,6 +7,8 @@ import {
     Platform
 } from "react-native";
 
+import styles from "../screens/main/styles/styles";
+
 export default class CurrentPlanItem extends Component {
     render() {
         return (
@@ -20,8 +22,8 @@ export default class CurrentPlanItem extends Component {
                     <View style={{flexDirection: 'row'}}>
                         <View style={{flexDirection: 'column', marginTop: 13, marginLeft: 15}}>
                            <Text style={{fontSize: 13}}>{this.props.sub}</Text>
-                           <Text style={[styles.textStyle, {marginTop: 5}]}>{this.props.date}</Text>
-                           <Text style={[styles.textStyle, {marginTop: 2}]}>{this.props.merchantCnt} Merchants</Text> 
+                           <Text style={[styles.textStyle, {marginTop: 5, color: '#8e8e8e', marginLeft: 0}]}>{this.props.date}</Text>
+                           <Text style={[styles.textStyle, {marginTop: 2, color: '#8e8e8e', marginLeft: 0}]}>{this.props.merchantCnt} Merchants</Text> 
                         </View>
                         <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 15, marginLeft: 25}}>
                             <Image source={require('../resources/man.png')} style={{ width: 40, height: 40}} />
@@ -36,26 +38,3 @@ export default class CurrentPlanItem extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    textStyle: {
-        color: '#8e8e8e', 
-        fontSize: 12
-    },
-    elevationLow1: {
-      ...Platform.select({
-        ios: {
-          shadowColor: 'lightgrey',
-          shadowOffset: { width: 1, height: 3 },
-          shadowOpacity: 5,
-        },
-        android: {
-          elevation: 5,
-        },
-      }),
-    },
-});

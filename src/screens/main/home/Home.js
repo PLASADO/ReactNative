@@ -81,6 +81,10 @@ export default class Home extends Component {
         this.props.navigation.navigate("OfferDetails")
     }
 
+    onActionNewPlan = () => {
+        this.props.navigation.navigate("NewPlan")   
+    }
+
     renderItem(item, index) {
         return (
             <TouchableOpacity onPress={() => this.onActionOfferDetails()}>
@@ -94,19 +98,20 @@ export default class Home extends Component {
             (index != 4) ?  
                 <Category imageUri={item.imgUri} title={item.title} /> :
 
-                <View style={[{height: 80, width: 120, marginLeft: 20, borderStyle: 'dotted', borderColor: '#bebebe', borderWidth: 2.5, borderRadius: 7, backgroundColor: 'white' }]}>
-                    
-                    <View style={{ flex: 1, alignItems: 'center', marginTop: 8 }}>
-                        <Image source={item.imgUri}
-                            style={{ resizeMode: 'stretch', width: 40, height: 30, marginTop: 5}}
-                        />
-                    </View>
+                <TouchableOpacity onPress={() => this.onActionNewPlan()}>
+                    <View style={[{height: 80, width: 120, marginLeft: 20, borderStyle: 'dotted', borderColor: '#bebebe', borderWidth: 2.5, borderRadius: 7, backgroundColor: 'white' }]}>
+                        
+                        <View style={{ flex: 1, alignItems: 'center', marginTop: 8 }}>
+                            <Image source={item.imgUri}
+                                style={{ resizeMode: 'stretch', width: 40, height: 30, marginTop: 5}}
+                            />
+                        </View>
 
-                    <View style={{ flex: 1, paddingLeft: 10 }}>
-                        <Text style={{textAlign: 'center', color: '#909090'}}>{item.title}</Text>
+                        <View style={{ flex: 1, paddingLeft: 10 }}>
+                            <Text style={{textAlign: 'center', color: '#909090'}}>{item.title}</Text>
+                        </View>
                     </View>
-                </View>
-            
+                </TouchableOpacity>
         );
     }
 

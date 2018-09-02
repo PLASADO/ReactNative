@@ -62,4 +62,43 @@ export default {
         borderColor: '#ec2727',
         borderWidth: 2
     },
+    styleInput: {
+        fontSize: 45,
+        textAlign: 'center',
+        padding: 20
+    },
+    containerFooter: {
+        position: 'absolute',
+        bottom: 35,
+        left: 25,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    activeCom: {
+        backgroundColor: 'white',
+    },
+    inactiveCom: {
+        backgroundColor: 'white',
+    },
+    activeText: {
+        color: '#ed2a2d',
+    },
+    inactiveText: {
+        color: '#ed2a2d',
+    },
+    planDetails: {
+        flexDirection: 'row', 
+        height: 60, 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        marginTop: 15
+    },
+    txtStyle: {
+        height: 30, 
+        width: 100, 
+        backgroundColor: '#e8e8e8', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        borderRadius: 7
+    }
 }

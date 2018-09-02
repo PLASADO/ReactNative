@@ -11,6 +11,7 @@ import Home from "./Home";
 import OfferDetails from "./OfferDetails";
 import PurchaseReview from "./PurchaseReview";
 import OfferVoucher from "../OfferVoucher";
+import NewPlan from "../plans/NewPlan";
 
 const Navigation = createStackNavigator({
     
@@ -18,6 +19,7 @@ const Navigation = createStackNavigator({
     OfferDetails: { screen: OfferDetails },
     PurchaseReview: { screen: PurchaseReview },
     OfferVoucher: { screen: OfferVoucher },
+    NewPlan: {screen: NewPlan},
 
 }, {
     initialRouteName: 'Home',

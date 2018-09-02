@@ -7,10 +7,14 @@ import {
 } from 'react-native';
 import {createStackNavigator} from 'react-navigation'
 import Plan from "./Plan";
+import NewPlan from "./NewPlan";
+import PlanDetails from "./PlanDetails";
 
 const Navigation = createStackNavigator({
     
     Plan: {screen: Plan},
+    NewPlan: {screen: NewPlan},
+    PlanDetails: {screen: PlanDetails},
 
 }, {
     initialRouteName: 'Plan',
