@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, Image, ImageBackground, Dimensions, FlatList} from 'react-native';
 
 import styles from "../screens/main/styles/styles";
-import OfferDetailsItem from "./OfferDetailsItem";
+import OfferDetailsItem from "./OfferDetailsItem1";
 
 var deviceWidth = Dimensions.get('window').width;
 
@@ -11,6 +11,10 @@ export default class PlanItem extends Component {
 
     constructor(props) {
         super(props);
+    }
+
+    pushScreen = () => {
+
     }
 
     render() {
@@ -36,13 +40,18 @@ export default class PlanItem extends Component {
 
                 <View style={{height: 200, marginLeft: -10, marginRight: -10}}>
                     <FlatList
+                        showsVerticalScrollIndicator={false}
                         data={this.props.data.subItem}
                         keyExtractor={(item, index) => item.index}
                         renderItem={({item}) => <TouchableOpacity
                             onPress={() => this.pushScreen(item)}>
-                            <OfferDetailsItem title={item.name} categoryImg={item.personImgUri} price={item.price} youPay={item.date} savePrice={item.price}/>
+                            <OfferDetailsItem title={item.name} family={item.family} date={item.date} categoryImg={item.personImgUri} price={item.price}/>
                         </TouchableOpacity>}
                     />
+                </View>
+
+                <View style={{height: 35, borderRadius: 7, backgroundColor: '#ec2727', marginLeft: 50, marginRight: 50, marginTop: 10, alignItems: 'center', justifyContent: 'center'}}>
+                    <Image source={require('../resources/plus1.png')} style={{width: 20, height: 20}}/>    
                 </View>
             </View>
         )

@@ -34,7 +34,7 @@ const Navigation = createStackNavigator({
     MainTabBased: { screen: MainTabBased }
     
 }, {
-    initialRouteName: 'MainTabBased',
+    initialRouteName: 'Onboard',
     navigationOptions: {
         headerStyle: {
             backgroundColor: '#fbf1dc'

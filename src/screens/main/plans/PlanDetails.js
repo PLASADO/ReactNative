@@ -102,9 +102,7 @@ export default class Signup extends Component {
 
     renderItem(item, index) {
         return (
-            <TouchableOpacity onPress={() => this.onActionPlanDetails()}>
-                <PlanItem data={item} />
-            </TouchableOpacity>
+            <PlanItem data={item} />
         );
     }
 
@@ -132,7 +130,7 @@ export default class Signup extends Component {
                     <View style={styles.txtStyle}>
                         <Text style={{fontSize: 12}}>14th May 2019</Text>
                     </View>
-                    <Image source={require('../../../resources/wedding.png')} style={{resizeMode: 'stretch', width: 70, height: 50, marginLeft: 20, marginRight: 20}}/>
+                    <Image source={require('../../../resources/wedding.png')} style={{resizeMode: 'stretch', width: 70, height: 55, marginLeft: 20, marginRight: 20}}/>
                     <View style={styles.txtStyle}>
                         <Text style={{fontSize: 12}}>€25,000</Text>
                     </View>
