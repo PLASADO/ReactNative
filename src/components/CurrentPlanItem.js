@@ -7,7 +7,12 @@ import {
     Platform
 } from "react-native";
 
+
 import styles from "../screens/main/styles/styles";
+import CustomProgressBar from "./CustomProgressBar";
+
+const TO_VALUE = 70;
+const DURATION = 5000;
 
 export default class CurrentPlanItem extends Component {
     render() {
@@ -31,7 +36,16 @@ export default class CurrentPlanItem extends Component {
                             <Image source={require('../resources/man.png')} style={{ width: 40, height: 40, position: 'absolute', left: 50}} />
                         </View>
                     </View>
-                    <View></View>
+                    <View style={{alignItems: 'center', marginTop: 9}}>
+                        <CustomProgressBar
+                            width={220}
+                            height={20}
+                            toValue={TO_VALUE}
+                            barAnimationDuration={DURATION}
+                            borderWidth={1}
+                            borderRadius={20}
+                          />
+                    </View>
                 </View>
             </View>
         );

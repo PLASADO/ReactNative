@@ -5,6 +5,11 @@ import styles from "../styles/styles";
 import {HeaderNavigation} from "../../../components/HeaderNavigation";
 import PlanItem from "../../../components/PlanItem";
 
+import CustomProgressBar from "../../../components/CustomProgressBar";
+
+const TO_VALUE = 68;
+const DURATION = 5000;
+
 const deviceWidth = Dimensions.get('window').width
 
 let planDetails = [
@@ -136,7 +141,18 @@ export default class Signup extends Component {
                     </View>
                 </View>
 
-                <View style={{ height: 405, marginTop: 15, marginRight: 20}}>
+                <View style={{alignItems: 'center', marginTop: 9}}>
+                    <CustomProgressBar
+                        width={220}
+                        height={20}
+                        toValue={TO_VALUE}
+                        barAnimationDuration={DURATION}
+                        borderWidth={1}
+                        borderRadius={20}
+                      />
+                </View>
+
+                <View style={{ height: 385, marginTop: 15, marginRight: 20}}>
                     <ScrollView
                         horizontal={true}
                         showsHorizontalScrollIndicator={false} >

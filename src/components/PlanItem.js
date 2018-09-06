@@ -4,6 +4,10 @@ import {View, Text, StyleSheet, TouchableOpacity, Image, ImageBackground, Dimens
 import styles from "../screens/main/styles/styles";
 import OfferDetailsItem from "./OfferDetailsItem1";
 
+import CustomProgressBar from "./CustomProgressBar";
+
+const TO_VALUE = 85;
+const DURATION = 5000;
 var deviceWidth = Dimensions.get('window').width;
 
 export default class PlanItem extends Component {
@@ -20,7 +24,7 @@ export default class PlanItem extends Component {
     render() {
 
         return (
-            <View style={[{height: 400, width: 250, marginLeft: 20, borderRadius: 8, backgroundColor: '#fafafa'}, styles.elevationLow1]}>
+            <View style={[{height: 380, width: 250, marginLeft: 20, borderRadius: 8, backgroundColor: '#fafafa'}, styles.elevationLow1]}>
                 <ImageBackground source={ this.props.data.bgImgUri } style={{resizeMode: 'stretch', height: 70, borderTopLeftRadius: 7, borderTopRightRadius: 7}} imageStyle={{borderRadius: 7}}>
                     <View style={{flex: 1, backgroundColor: '#ec2727bd', justifyContent: 'center', borderRadius: 7}}>
                         <Text style={{fontSize: 18, color: 'white', marginLeft: 15}}>Wedding Dress</Text>
@@ -34,11 +38,20 @@ export default class PlanItem extends Component {
                     
                     <View style={{ flex: 1, flexDirection: 'column', width: 100, marginLeft: 15, backgroundColor: 'white', marginRight: 15, justifyContent: 'center', alignItems: 'center', borderRadius: 7}}>
                         <Text style={{fontSize: 12, color: '#747474'}}>Total Saved: €850</Text>
-                        <Text style={{fontSize: 22, marginTop: 2}}></Text>
+                        <View style={{alignItems: 'center', marginTop: 9}}>
+                            <CustomProgressBar
+                                width={100}
+                                height={20}
+                                toValue={TO_VALUE}
+                                barAnimationDuration={DURATION}
+                                borderWidth={1}
+                                borderRadius={20}
+                              />
+                        </View>
                     </View>
                 </View>                
 
-                <View style={{height: 200, marginLeft: -10, marginRight: -10}}>
+                <View style={{height: 180, marginLeft: -10, marginRight: -10}}>
                     <FlatList
                         showsVerticalScrollIndicator={false}
                         data={this.props.data.subItem}

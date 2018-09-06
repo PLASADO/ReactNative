@@ -100,5 +100,15 @@ export default {
         alignItems: 'center', 
         justifyContent: 'center', 
         borderRadius: 7
+    },
+    text: {
+        position: 'absolute',
+        alignSelf: 'center',
+        zIndex: 100,
+        top: 2,
+        fontSize: 12
+    },
+    linearGradient: {
+        flex: 1
     }
 }
